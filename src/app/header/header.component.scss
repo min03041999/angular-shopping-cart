@@ -1,0 +1,35 @@
+header {
+  background: rgb(94, 0, 0);
+  padding: 20px 0;
+}
+header h4 {
+  color: #fff;
+  cursor: pointer;
+}
+header h4:focus {
+  outline: none;
+  border: none;
+}
+.cart_icon {
+  position: relative;
+  cursor: pointer;
+}
+.cart_icon:focus {
+  outline: none;
+  border: none;
+}
+.cart_icon i {
+  font-size: 24px;
+  color: #fff;
+}
+.cart_value {
+  position: absolute;
+  top: -16px;
+  right: -32px;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  padding: 4px 10px;
+  font-weight: 800;
+  font-size: 16px;
+}

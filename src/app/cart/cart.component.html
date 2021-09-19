@@ -1,0 +1,60 @@
+<section class="cart_section">
+  <div class="container">
+    <h2>Cart</h2>
+    <div *ngIf="getCartDetails">
+      <table>
+        <tr>
+          <th>Image</th>
+          <th>Price</th>
+          <th>Quantity</th>
+          <th>Sub Total</th>
+          <th>Remove Item</th>
+        </tr>
+        <tr *ngFor="let getCartDetail of getCartDetails">
+          <td><img src="{{ getCartDetail.img }}" alt="P1" /></td>
+          <td>₹ {{ getCartDetail.amt }}</td>
+          <td>
+            <div class="content">
+              <button
+                type="button"
+                class="btn"
+                (click)="incQut(getCartDetail.prodId, getCartDetail.qnt)"
+              >
+                <i class="fa fa-plus">+</i>
+              </button>
+              <span>{{ getCartDetail.qnt }} </span>
+              <button
+                type="button"
+                class="btn"
+                (click)="decQut(getCartDetail.prodId, getCartDetail.qnt)"
+              >
+                <i class="fa fa-minus">-</i>
+              </button>
+            </div>
+          </td>
+          <td>₹{{ getCartDetail.qnt * getCartDetail.amt | number }}</td>
+          <td>
+            <button
+              type="button"
+              class="delete"
+              (click)="singleDelete(getCartDetail.prodId)"
+            >
+              <i class="fa fa-trash">delete</i>
+            </button>
+          </td>
+        </tr>
+      </table>
+      <div class="row">
+        <div class="col-md-6">
+          <h3>Total - ₹ {{ total }}</h3>
+        </div>
+        <div class="col-md-6 text-right">
+          <button type="button" class="removeall" (click)="removeall()">
+            <i class="fa fa-trash"></i>
+            Remove All Item
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,7 +1,7 @@
 <section class="cart_section">
   <div class="container">
     <h2>Cart</h2>
-    <div *ngIf="getCartDetails">
+    <div *ngIf="getCartDetails.length != 0">
       <table>
         <tr>
           <th>Image</th>
@@ -55,6 +55,9 @@
           </button>
         </div>
       </div>
+    </div>
+    <div *ngIf="getCartDetails.length == 0">
+      Vui lòng chọn sản phẩm giỏ hàng
     </div>
   </div>
 </section>
